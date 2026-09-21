@@ -2,7 +2,6 @@ name: Release APK
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -23,31 +22,44 @@ jobs:
           java-version: "17"
           cache: gradle
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android platform 35
+      - name: Install Android SDK platform 35
         run: |
-          sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+          set -euo pipefail
+          SDK="${ANDROID_SDK_ROOT:-${ANDROID_HOME}}"
+          echo "Using Android SDK at $SDK"
+          SM=""
+          for candidate in \
+              "$SDK/cmdline-tools/latest/bin/sdkmanager" \
+              "$SDK/cmdline-tools/16.0/bin/sdkmanager" \
+              "$SDK/cmdline-tools/bin/sdkmanager"
+          do
+            if [ -x "$candidate" ]; then
+              SM="$candidate"
+              break
+            fi
+          done
+          if [ -z "$SM" ]; then
+            SM=$(find "$SDK/cmdline-tools" -name sdkmanager -type f 2>/dev/null | head -n 1)
+          fi
+          if [ -z "$SM" ] || [ ! -x "$SM" ]; then
+            echo "sdkmanager not found"
+            ls -la "$SDK" || true
+            exit 1
+          fi
+          echo "sdkmanager=$SM"
+          yes | "$SM" --licenses >/dev/null || true
+          "$SM" "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+          printf 'sdk.dir=%s\n' "$SDK" > local.properties
 
       - name: Build signed release APK
         run: |
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon --stacktrace
 
-      - name: Prepare release folder
-        run: |
-          mkdir -p dist
-          test -f app/build/outputs/apk/release/CacaMusicPlayer.apk
-          cp app/build/outputs/apk/release/CacaMusicPlayer.apk dist/CacaMusicPlayer.apk
-          ls -lh dist/CacaMusicPlayer.apk
-
-      # Uploading the APK lets GitHub Actions give you one zip:
-      # CacaMusicPlayer-release.zip  →  CacaMusicPlayer.apk
       - name: Upload CacaMusicPlayer-release.zip
         uses: actions/upload-artifact@v4
         with:
           name: CacaMusicPlayer-release
-          path: dist/CacaMusicPlayer.apk
+          path: app/build/outputs/apk/release/CacaMusicPlayer.apk
           if-no-files-found: error
           retention-days: 30
