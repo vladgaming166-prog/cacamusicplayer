@@ -1,0 +1,14 @@
+{
+  "tracks": [
+    {
+      "title": "Example public-domain placeholder",
+      "artist": "Replace this catalog",
+      "album": "User server",
+      "duration": 0,
+      "streamUrl": "https://archive.org/download/testmp3testfile/mpthreetest.mp3",
+      "coverUrl": "",
+      "source": "User catalog",
+      "license": "Example — replace with files you have permission to host"
+    }
+  ]
+}

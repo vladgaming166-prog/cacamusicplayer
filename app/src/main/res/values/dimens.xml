@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="list_item_height">56dp</dimen>
+    <dimen name="tile_icon">36dp</dimen>
+    <dimen name="art_list">48dp</dimen>
+    <dimen name="art_album">72dp</dimen>
+    <dimen name="art_player">240dp</dimen>
+    <dimen name="mini_player_height">52dp</dimen>
+    <dimen name="control_size">48dp</dimen>
+    <dimen name="control_play">64dp</dimen>
+    <dimen name="logo_home">64dp</dimen>
+    <dimen name="action_bar_shadow">4dp</dimen>
+    <dimen name="button_radius">3dp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_item">16sp</dimen>
+    <dimen name="text_sub">13sp</dimen>
+    <dimen name="text_time">12sp</dimen>
+</resources>
