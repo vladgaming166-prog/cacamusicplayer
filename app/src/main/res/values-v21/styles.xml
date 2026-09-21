@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Early Material (2014) still using the red identity. -->
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/caca_red</item>
+        <item name="android:colorPrimaryDark">@color/caca_red_dark</item>
+        <item name="android:colorAccent">@color/caca_red</item>
+        <item name="android:statusBarColor">@color/caca_red_dark</item>
+        <item name="android:navigationBarColor">@color/caca_red_dark</item>
+        <item name="android:windowBackground">@color/window_bg</item>
+        <item name="android:actionBarStyle">@style/CacaActionBar21</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:windowContentOverlay">@drawable/ab_shadow</item>
+        <item name="android:alertDialogTheme">@android:style/Theme.Material.Light.Dialog.Alert</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="@android:style/Theme.Material">
+        <item name="android:colorPrimary">@color/caca_red</item>
+        <item name="android:colorPrimaryDark">@color/caca_red_dark</item>
+        <item name="android:colorAccent">@color/caca_red_light</item>
+        <item name="android:statusBarColor">@color/caca_red_dark</item>
+        <item name="android:windowBackground">@color/window_bg_dark</item>
+        <item name="android:actionBarStyle">@style/CacaActionBar21</item>
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+    </style>
+
+    <style name="AppTheme.Classic" parent="@android:style/Theme.Material.Light">
+        <item name="android:colorPrimary">@color/caca_red</item>
+        <item name="android:colorPrimaryDark">@color/caca_red_dark</item>
+        <item name="android:colorAccent">@color/caca_red</item>
+        <item name="android:statusBarColor">@color/caca_red_dark</item>
+        <item name="android:windowBackground">@color/panel_white</item>
+        <item name="android:actionBarStyle">@style/CacaActionBar21</item>
+    </style>
+
+    <style name="CacaActionBar21" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_red</item>
+        <item name="android:titleTextStyle">@style/CacaActionBarTitle</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:icon">@mipmap/ic_launcher</item>
+        <item name="android:displayOptions">showTitle|homeAsUp|showHome</item>
+    </style>
+</resources>

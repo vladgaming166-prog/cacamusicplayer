@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mini_player"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mini_player_height"
+    android:background="@drawable/mini_player_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="8dp"
+    android:paddingRight="4dp"
+    android:visibility="gone">
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp"
+        android:background="@color/caca_red" />
+
+    <ImageView
+        android:id="@+id/mini_art"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/art_placeholder"
+        android:contentDescription="@string/missing_artwork"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_default_art" />
+
+    <LinearLayout
+        android:id="@+id/mini_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mini_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mini_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/mini_play"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_control"
+        android:contentDescription="@string/play"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_play" />
+</LinearLayout>

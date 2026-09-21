@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caca_red_soft"
+        android:padding="8dp"
+        android:text="@string/legal_notice"
+        android:textColor="@color/caca_red_dark"
+        android:textSize="12sp" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/panel_white"
+        android:divider="@color/divider"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" />
+
+    <include layout="@layout/include_mini_player" />
+</LinearLayout>
