@@ -24,7 +24,20 @@ It will **not** download or unlock protected Spotify / YouTube / YouTube Music s
 
 Android 2.2 (API 8) is **not** used. Current Android Gradle Plugin and the platform APIs this app needs (Holo ActionBar, `Notification.Builder`, `MediaStore` music columns, runtime-safe storage) are not realistic on Froyo. API 14 is the oldest level that still builds cleanly with modern tools and stays lightweight (no AndroidX, no extra libraries).
 
-## How to build the APK (easiest)
+## Download the APK from your phone (no PC)
+
+GitHub Actions builds a **release zip** automatically:
+
+1. Open [Actions](https://github.com/vladgaming166-prog/cacamusicplayer/actions).
+2. Tap the latest **Release APK** run and wait until it is green / finished.
+3. Open **Artifacts**.
+4. Download **CacaMusicPlayer-release** (this is a zip).
+5. Unzip it and install **CacaMusicPlayer.apk**.
+6. If Android blocks the install, allow installs from Chrome / GitHub / your Files app.
+
+You can also tap **Run workflow** on that Actions page if you need a new build.
+
+## How to build the APK on a PC
 
 You need:
 
